@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("/src/assets/fonts/Manrope-VariableFont_wght.woff2");
+  font-weight: 200 800;
+}
+
+/* ------------------- CSS Reset ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+*:focus-visible {
+  outline: 0.125rem dotted green;
+  outline-offset: 0.125rem;
+}
+
+img,
+svg,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+/* ------------------- End of CSS Reset ------------------- */
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+  color: hsl(0, 0%, 85%);
+  background-color: hsl(213, 13%, 14%);
+}
