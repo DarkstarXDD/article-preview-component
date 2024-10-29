@@ -34,6 +34,7 @@ textarea {
 
 button {
   cursor: pointer;
+  border: none;
 }
 
 /* ------------------- Design Tokens ------------------- */
@@ -83,6 +84,15 @@ button {
 }
 /* ------------------- End of Design Tokens ------------------- */
 
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 body {
   min-height: 100dvh;
   display: flex;
@@ -90,6 +100,84 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Manrope", sans-serif;
-  color: hsl(0, 0%, 85%);
-  background-color: hsl(213, 13%, 14%);
+  background-color: var(--clr-grey-200);
+  padding: 1.5rem;
+}
+
+.article {
+  max-width: 22rem;
+  display: grid;
+  background-color: var(--clr-white);
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+/* .hero-img {
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+} */
+
+.content-wrapper {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.text-content {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.heading {
+  color: var(--clr-grey-900);
+}
+
+.text {
+  color: var(--clr-grey-400);
+}
+
+.bottom-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+}
+
+.name {
+  color: var(--clr-grey-900);
+}
+
+.date {
+  color: var(--clr-grey-300);
+}
+
+.share-button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-grey-200);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  outline-color: var(--clr-grey-400);
+}
+
+@media (min-width: 48rem) {
+  .article {
+    max-width: 45rem;
+    grid-auto-flow: column;
+  }
+
+  .content-wrapper {
+    gap: 1.25rem;
+    padding: 2rem 2.5rem;
+  }
 }
