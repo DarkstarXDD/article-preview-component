@@ -198,6 +198,7 @@ body {
 
 .social-link {
   display: block;
+  outline-color: var(--clr-grey-100);
 }
 
 .social-icon {
