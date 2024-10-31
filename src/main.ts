@@ -1,7 +1,4 @@
 // Get elements
-const bottomWrapper = document.getElementById("bottom-wrapper")
-const authorDetails = document.getElementById("author-details")
-const shareDetails = document.getElementById("share-details")
 const shareButton = document.getElementById("share-button")
 
 function openPopover() {
@@ -21,7 +18,4 @@ shareButton?.addEventListener("click", () => {
   } else {
     openPopover()
   }
-  bottomWrapper?.classList.toggle("bottom-expanded")
-  authorDetails?.classList.toggle("details-hidden")
-  shareDetails?.classList.toggle("details-hidden")
 })

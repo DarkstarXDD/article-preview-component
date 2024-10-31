@@ -139,16 +139,13 @@ body {
 }
 
 .bottom-wrapper {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 1rem;
   padding-block: 1.5rem;
   padding-inline: 2rem;
-}
-
-.bottom-expanded {
-  background-color: var(--clr-grey-900);
 }
 
 .author-details {
@@ -173,10 +170,15 @@ body {
 }
 
 .share-details {
+  position: absolute;
+  inset: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1.25rem;
+  background-color: var(--clr-grey-900);
+  padding-block: 1.5rem;
+  padding-inline: 2rem;
 }
 
 .share-heading {
@@ -212,6 +214,7 @@ body {
   border: 1px solid transparent;
   border-radius: 999px;
   outline-color: var(--clr-grey-400);
+  z-index: 5;
 }
 
 .share-button[aria-expanded="true"] {
@@ -219,7 +222,11 @@ body {
   background-color: var(--clr-grey-400);
 }
 
-.details-hidden {
+.share-button[aria-expanded="true"] + .share-details {
+  display: flex;
+}
+
+.share-button[aria-expanded="false"] + .share-details {
   display: none;
 }
 
