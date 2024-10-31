@@ -22,8 +22,14 @@ shareButton?.addEventListener("click", () => {
 
 // If somewhere outside the popover is clicked, close popover.
 document.addEventListener("click", (event) => {
-  const target = event.target as Node
-  if (!shareDetails?.contains(target) && !shareButton?.contains(target)) {
+  const isTargetNode = event.target instanceof Node
+  if (!isTargetNode) {
+    return
+  }
+  if (
+    !shareDetails?.contains(event.target) &&
+    !shareButton?.contains(event.target)
+  ) {
     closePopover()
   }
 })
