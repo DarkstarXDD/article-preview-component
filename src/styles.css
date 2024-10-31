@@ -217,6 +217,10 @@ body {
   z-index: 5;
 }
 
+.share-button-icon {
+  pointer-events: none;
+}
+
 .share-button[aria-expanded="true"] {
   color: white;
   background-color: var(--clr-grey-400);

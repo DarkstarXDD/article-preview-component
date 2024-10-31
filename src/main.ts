@@ -1,5 +1,5 @@
-// Get elements
 const shareButton = document.getElementById("share-button")
+const shareDetails = document.getElementById("share-details")
 
 function openPopover() {
   shareButton?.setAttribute("aria-expanded", "true")
@@ -17,5 +17,21 @@ shareButton?.addEventListener("click", () => {
     closePopover()
   } else {
     openPopover()
+  }
+})
+
+// If somewhere outside the popover is clicked, close popover.
+document.addEventListener("click", (event) => {
+  if (
+    !shareDetails?.contains(event.target) &&
+    !shareButton?.contains(event.target)
+  ) {
+    closePopover()
+  }
+})
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closePopover()
   }
 })
