@@ -227,16 +227,16 @@ body {
   pointer-events: none;
 }
 
-.share-button[aria-expanded="true"] {
+.share-button[data-is-popover-open="true"] {
   color: var(--clr-white);
   background-color: var(--clr-grey-400);
 }
 
-.share-button[aria-expanded="true"] + .share-details {
+.share-button[data-is-popover-open="true"] + .share-details {
   display: flex;
 }
 
-.share-button[aria-expanded="false"] + .share-details {
+.share-button[data-is-popover-open="false"] + .share-details {
   display: none;
 }
 

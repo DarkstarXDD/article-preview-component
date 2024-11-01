@@ -2,15 +2,17 @@ const shareButton = document.getElementById("share-button")
 const shareDetails = document.getElementById("share-details")
 
 function openPopover() {
-  shareButton?.setAttribute("aria-expanded", "true")
+  if (!shareButton) return
+  shareButton.dataset.isPopoverOpen = "true"
 }
 
 function closePopover() {
-  shareButton?.setAttribute("aria-expanded", "false")
+  if (!shareButton) return
+  shareButton.dataset.isPopoverOpen = "false"
 }
 
 shareButton?.addEventListener("click", () => {
-  let isPopoverOpen = shareButton.getAttribute("aria-expanded")
+  let isPopoverOpen = shareButton.dataset.isPopoverOpen
 
   // If the Popover is currently open, close it. If not open it.
   if (isPopoverOpen === "true") {
@@ -23,9 +25,7 @@ shareButton?.addEventListener("click", () => {
 // If somewhere outside the popover is clicked, close popover.
 document.addEventListener("click", (event) => {
   const isTargetNode = event.target instanceof Node
-  if (!isTargetNode) {
-    return
-  }
+  if (!isTargetNode) return
   if (
     !shareDetails?.contains(event.target) &&
     !shareButton?.contains(event.target)
